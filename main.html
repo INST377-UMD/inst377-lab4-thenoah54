@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <!-- <title>INST377 - Lab 4 </title> -->
+        <link rel="stylesheet" href="lab4_style.css">
+    </head>
+
+    <body>
+        <h1 id="title">INST377 - Lab 4</h1>
+
+        <div class="sections">
+
+            <div class="alertMe">
+                <form name="contactForm" onsubmit="return takeName()">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <input type="submit" value="Alert Me!"> 
+                </form>
+
+                <script type="text/javascript">
+                    function takeName() {
+                        console.log('validating user input:', document.contactForm.name.value)
+                        alert('Hi '+ document.contactForm.name.value +'!')
+                    }
+                </script>
+            </div>
+            
+            <div class="changeColor">
+                <button onclick="colorSwap()">Change Color</button>
+                <script type="text/javascript">
+                    function colorSwap() {
+                        console.log('Current color:', document.body.style.backgroundColor)
+
+                        if (document.body.style.backgroundColor == 'green') {
+                            document.body.style.backgroundColor = 'rgb(180, 216, 255)';
+ 
+                        } else {
+                            document.body.style.backgroundColor = 'green';
+                        }
+
+                        console.log('Changed color:', document.body.style.backgroundColor)
+                    }
+                </script>
+            </div>
+
+            <div class="textTester">
+                <form name="textForm" onsubmit="return formVal()">
+                    <label for="tester">Text Tester:</label>
+                    <input type="text" id="tester">
+                    <input type="submit" value="Validate Text">    
+                </form>
+ 
+                <script type="text/javascript">
+                    function formVal() {
+                        var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                        if (validation.test(document.textForm.tester.value)) {
+                            console.log('bad text')
+                            alert('INVALID: Special character detected')
+                        } else {
+                            console.log('valid text')
+                        }
+                    }
+
+                </script>
+            </div>
+
+            <div class="addText">
+                <button onclick="addText()">Add Text</button>
+                <script type="text/javascript">
+                    function addText() {
+                        document.getElementById("title").innerHTML += " - Add text"
+                    }
+                </script> 
+            </div>
+
+        </div>
+    </body>
+</html>
