@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(180, 216, 255);
+}
+
+.sections div {
+    color: white;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 10px;
+    width: 40%;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block; 
+    background-color: blueviolet;
+    border-color: white;
+}
+
+/* .alertMe {
+
+} */
+
+.changeColor, .addText{
+    float: right;
+}
+
+/* .textTester {
+    
+} */
+
